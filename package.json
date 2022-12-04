@@ -13,8 +13,8 @@
   "license": "MIT",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "build": "gatsby --openssl-legacy-provider build",
-    "develop": "gatsby --openssl-legacy-provider develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
