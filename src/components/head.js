@@ -1,47 +1,22 @@
+/* eslint-disable quotes */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
-import { useStaticQuery, graphql } from 'gatsby';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
-const Head = ({ title, description, image }) => {
-  const { pathname } = useLocation();
-
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            defaultTitle: title
-            defaultDescription: description
-            siteUrl
-            defaultImage: image
-            twitterUsername
-          }
-        }
-      }
-    `,
-  );
-
-  const {
-    defaultTitle,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitterUsername,
-  } = site.siteMetadata;
+const Head = ({ title }) => {
+  // const { defaultTitle, twitterUsername } = site.siteMetadata;
 
   const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${pathname}`,
+    title: 'MobileHub',
+    description: "Looking for a change in you old mobile device, don't worry we got you covered.",
+    image: `https://www.mobilehub.shop/static/fdcfb17d46badcfc0e2c5bbd2118b181/a5bb2/vijay.avif`,
+    url: `https://www.mobilehub.shop/`,
   };
 
   return (
-    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
+    <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${seo.title}`}>
       <html lang="en" />
 
       <meta name="description" content={seo.description} />
@@ -53,13 +28,7 @@ const Head = ({ title, description, image }) => {
       <meta property="og:url" content={seo.url} />
       <meta property="og:type" content="website" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={twitterUsername} />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-
-      <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" />
+      {/* <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" /> */}
     </Helmet>
   );
 };
