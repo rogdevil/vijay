@@ -125,7 +125,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  // const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -135,13 +135,18 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Hello, My name is Vijay and I am a tech enthusiast who has been around gadgets for a
+              long time. I have found that the recent gadget innovations have been awesome and they
+              can bring a lot of joy to people like me. I enjoy exploring how these devices work and
+              what they can do.
+            </p>
+            <p>
+              The world is changing with so much new technology popping up every day. It might be
+              overwhelming to keep up with all the latest gadgets and trends, especially if you
+              don't have a technical background or interest in that stuff. That's where I come in!
             </p>
 
-            <p>
+            {/* <p>
               Fast-forward to today, and I’ve had the privilege of working at{' '}
               <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
               <a href="https://starry.com/">a start-up</a>,{' '}
@@ -159,22 +164,22 @@ const About = () => {
               </a>{' '}
               that covers everything you need to build a web app with the Spotify API using Node
               &amp; React.
-            </p>
+            </p> */}
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            {/* <p>Here are a few technologies I’ve been working with recently:</p> */}
           </div>
 
-          <ul className="skills-list">
+          {/* <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
+          </ul> */}
         </StyledText>
 
         <StyledPic>
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
-              width={500}
+              src="../../images/vijay.jpg"
+              height={400}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
               alt="Headshot"
